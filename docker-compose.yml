@@ -3,8 +3,8 @@ services:
  web:
  build: .
  command: bash -c “python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000”
- container_name: <dir-in-container>
+ container_name: django
  volumes:
- — .:/<dir-in-container>
+ — .:/django
  ports:
  — “8000:8000”
